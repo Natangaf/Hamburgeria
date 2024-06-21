@@ -12,7 +12,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
   }
 
@@ -29,8 +28,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${({theme}) => theme.colors.background.main};
-    color: ${({theme}) => theme.colors.text.main};
+    background-color: ${({ theme }) => theme.colors.background.main};
+    color: ${({ theme }) => theme.colors.text.main};
+    font-family: "Roboto", sans-serif;
 
   }
 

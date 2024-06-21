@@ -4,10 +4,8 @@ import { InputShared, InputSharedLabel } from "./_search";
 const Search = () => {
   return (
     <InputSharedLabel>
-
-      <InputShared>
-        <MdSearch />
-      </InputShared>
+      <MdSearch />
+      <InputShared placeholder="Search menu items" />
     </InputSharedLabel>
   );
 };

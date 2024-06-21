@@ -6,6 +6,7 @@ const theme = {
     },
     details: {
       primary: "#DADADA",
+      secondary: "#8A94A4",
     },
     background: {
       main: "#EEEEEE",
