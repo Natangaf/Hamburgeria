@@ -1,7 +1,18 @@
 import styled from "styled-components";
+import media from "../../styles/media";
 
 export const MainDashboard = styled.main`
   width: 100%;
+
+  margin-top: 30px;
+  padding: 32px 40px;
+  border-radius: 5px;
+
+  background-color: ${({ theme }) => theme.colors.background.details};
+
+  ${media.tablet} {
+    padding: 0px;
+  }
 `;
 
 export const FigurePrincipal = styled.figure`
@@ -44,6 +55,22 @@ export const ImageCards = styled.img`
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-
-
 `;
+export const BoxShadowStoreItems = styled.section`
+  width: 60%;
+  padding: 10px 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 30px;
+
+  box-shadow: 0px 2px 14px 0px #00000024;
+
+  ${media.tablet} {
+    width: 100%;
+    padding: 0px 5px;
+  }
+`;
+
+

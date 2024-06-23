@@ -1,5 +1,6 @@
 import { PrincipalImage } from "../../assets/img";
 import {
+  BoxShadowStoreItems,
   Cards,
   Containerimage,
   FigurePrincipal,
@@ -10,32 +11,39 @@ import {
 } from "./_home";
 import ContainerComponent from "./../../components/ContainerComponent/ContainerComponent";
 import Search from "../../components/Search/Search";
-import { database } from "./../../../teste";
+import { database } from "../../teste";
+import { ISection } from "../../types/types";
+import StoreItemsList from "../../components/StoreItems/StoreItems";
 
 const Home = () => {
-
-  
   return (
-    <MainDashboard data-com="MainDashboard">
+    <>
       <FigurePrincipal data-com="FigurePrincipal">
         <PrincipalImg data-com="PrincipalImg" src={PrincipalImage} alt="" />
       </FigurePrincipal>
       <ContainerComponent gap={0}>
         <Search />
-        <NavCards>
-          {database.sections.map(({ id, images, name }) => {
-            return (
-              <Cards key={id}>
-                <Containerimage>
-                  <ImageCards src={images[0].image} alt={name} />
-                </Containerimage>
-                <p>{name}</p>
-              </Cards>
-            );
-          })}
-        </NavCards>
+        <MainDashboard data-com="MainDashboard">
+          <BoxShadowStoreItems>
+            <NavCards>
+              {database.sections.map(({ id, images, name }: ISection) => {
+                return (
+                  <Cards key={id}>
+                    <Containerimage>
+                      <ImageCards src={images[0].image} alt={name} />
+                    </Containerimage>
+                    <p>{name}</p>
+                  </Cards>
+                );
+              })}
+            </NavCards>
+            {database.sections.map((section) => (
+              <StoreItemsList {...section} />
+            ))}
+          </BoxShadowStoreItems>
+        </MainDashboard>
       </ContainerComponent>
-    </MainDashboard>
+    </>
   );
 };
 

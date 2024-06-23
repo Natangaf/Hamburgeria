@@ -1,4 +1,6 @@
-export const database: Database = {
+import { IDatabase } from "./types/types";
+
+export const database: IDatabase = {
   id: 14730,
   name: "FE TEST",
   type: "MENU",

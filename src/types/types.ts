@@ -1,9 +1,9 @@
-interface Image {
+export interface IImage {
   id: number;
   image: string;
 }
 
-interface ModifierItem {
+export interface IModifierItem {
   id: number;
   name: string;
   price: number;
@@ -15,15 +15,15 @@ interface ModifierItem {
   available: boolean;
 }
 
-interface Modifier {
+export interface IModifier {
   id: number;
   name: string;
   minChoices: number;
   maxChoices: number;
-  items: ModifierItem[];
+  items: IModifierItem[];
 }
 
-interface Item {
+export interface IItem {
   id: number;
   name: string;
   description?: string;
@@ -33,25 +33,25 @@ interface Item {
   visible?: number;
   availabilityType: string;
   sku?: string;
-  modifiers?: Modifier[];
-  images?: Image[];
+  modifiers?: IModifier[];
+  images?: IImage[];
   available: boolean;
 }
 
-interface Section {
+export interface ISection {
   id: number;
   name: string;
-  description?: string|null;
+  description?: string | null;
   position: number;
   visible: number;
-  images: Image[];
-  items: Item[];
+  images: IImage[];
+  items: IItem[];
 }
 
-interface Database {
+export interface IDatabase {
   id: number;
   name: string;
   type: string;
   collapse: number;
-  sections: Section[];
+  sections: ISection[];
 }
