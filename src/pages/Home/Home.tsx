@@ -16,11 +16,9 @@ import { database } from "../../teste";
 import { ISection } from "../../types/types";
 import StoreItemsList from "../../components/StoreItems/StoreItems";
 import Cart from "../../components/Cart/Cart";
-import { useState } from "react";
-import ModalComponent from "../../components/ModalComponent/ModalComponent";
+
 
 const Home = () => {
-
   return (
     <>
       <FigurePrincipal data-com="FigurePrincipal">
@@ -43,7 +41,7 @@ const Home = () => {
               })}
             </NavCards>
             {database.sections.map((section) => (
-              <StoreItemsList {...section} />
+              <StoreItemsList {...section} key={section.id} />
             ))}
           </BoxShadowStoreItems>
           <BoxShadowCart>
@@ -51,7 +49,6 @@ const Home = () => {
           </BoxShadowCart>
         </MainDashboard>
       </ContainerComponent>
-
     </>
   );
 };

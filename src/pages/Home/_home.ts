@@ -90,7 +90,6 @@ export const BoxShadowCart = styled.section`
   background-color: ${({ theme }) => theme.colors.background.details};
 
   ${media.tablet} {
-    width: 100%;
-    padding: 0px 5px;
+    display: none;
   }
 `;

@@ -10,7 +10,7 @@ interface IuseCartProvider {
   cart: IItemCart[];
   setCart: React.Dispatch<React.SetStateAction<IItemCart[]>>;
   deleteItenCart: (id: number) => void;
-  addItenCart: (id: number) => void;
+  addItenCart: (id: number, quantity: number) => void;
 }
 
 const CartContext = createContext<IuseCartProvider>({} as IuseCartProvider);
@@ -34,13 +34,13 @@ const CartProvider = ({ children }: ChildrenProps) => {
     setCart(updatedCart as IItemCart[]);
   };
 
-  const addItenCart = (id: number) => {
+  const addItenCart = (id: number, quantity: number) => {
     const itemInCart = cart.find((cartItem) => cartItem.id === id);
 
     if (itemInCart) {
       const updatedCart = cart.map((cartItem) =>
         cartItem.id === id
-          ? { ...cartItem, quantity: cartItem.quantity + 1 }
+          ? { ...cartItem, quantity: cartItem.quantity + quantity }
           : cartItem
       );
       setCart(updatedCart);
@@ -50,7 +50,7 @@ const CartProvider = ({ children }: ChildrenProps) => {
         .find((item) => item.id === id);
 
       if (item) {
-        setCart((prevCart) => [...prevCart, { ...item, quantity: 1 }]);
+        setCart((prevCart) => [...prevCart, { ...item, quantity: quantity }]);
       }
     }
   };

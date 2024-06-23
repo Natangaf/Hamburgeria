@@ -11,10 +11,16 @@ import {
   Dropshadow,
   MenuList,
   CloseMobileMenu,
+  ContainerModal,
+  Close,
 } from "./_header";
 import { useState, useEffect } from "react";
+import ModalComponent from "../ModalComponent/ModalComponent";
+import Cart from "../Cart/Cart";
 
 const Header = () => {
+  const [OpenModal, setOpenModal] = useState<boolean>(false);
+
   const [stateMobileMenu, setStateMobileMenu] = useState(false);
   const [animateMenu, setAnimateMenu] = useState(false);
   const location = useLocation();
@@ -37,7 +43,7 @@ const Header = () => {
     setAnimateMenu(false);
     setTimeout(() => {
       setStateMobileMenu(false);
-    }, 300); 
+    }, 300);
   };
 
   return (
@@ -75,9 +81,20 @@ const Header = () => {
                 </NavLink>
               </li>
             ))}
+            <li onClick={() => setOpenModal(true)}>
+              <p>Carrinho</p>
+            </li>
           </MenuList>
         </Dropshadow>
       )}
+      <ModalComponent isOpen={OpenModal} onClose={() => setOpenModal(false)}>
+        <ContainerModal>
+          <Close onClick={() => setOpenModal(false)}>
+            <MdOutlineClose />
+          </Close>
+          <Cart />
+        </ContainerModal>
+      </ModalComponent>
     </>
   );
 };

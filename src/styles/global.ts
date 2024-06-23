@@ -45,11 +45,11 @@ const GlobalStyle = createGlobalStyle`
 
   &::-webkit-scrollbar-track {
       border-radius: 5px;
-    background-color: ${({ theme }) => theme.colors.primary.main};
+    background-color: transparent;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: ${({ theme }) => theme.colors.primary.main};
+    background-color:${({ theme }) => theme.colors.primary.secondary};
       border-radius: 5px;
   }
 

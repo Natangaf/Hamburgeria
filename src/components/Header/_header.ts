@@ -132,6 +132,9 @@ export const MenuList = styled.ul<{ stateMobileMenu: boolean }>`
   a {
     padding-left: 30px;
   }
+  p {
+    padding-left: 30px;
+  }
   transform: ${({ stateMobileMenu }) =>
     stateMobileMenu ? "translateX(0)" : "translateX(100%)"};
   animation: ${({ stateMobileMenu }) => (stateMobileMenu ? slideIn : slideOut)}
@@ -145,5 +148,30 @@ export const CloseMobileMenu = styled.button`
   svg {
     width: 30px;
     height: 30px;
+  }
+`;
+
+export const ContainerModal = styled.div`
+  position: relative;
+
+  width: 100%;
+  height: 80%;
+
+  background-color: ${({ theme }) => theme.colors.background.secondary};
+`;
+
+export const Close = styled.button`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme.colors.primary.main};
+
+  padding: 5px;
+  svg {
+    width: 25px;
+    height: 25px;
   }
 `;
