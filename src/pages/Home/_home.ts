@@ -10,6 +10,9 @@ export const MainDashboard = styled.main`
 
   background-color: ${({ theme }) => theme.colors.background.details};
 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   ${media.tablet} {
     padding: 0px;
   }
@@ -73,4 +76,21 @@ export const BoxShadowStoreItems = styled.section`
   }
 `;
 
+export const BoxShadowCart = styled.section`
+  width: 35%;
+  height: 100%;
 
+  display: flex;
+  flex-direction: column;
+
+  gap: 30px;
+
+  box-shadow: 0px 2px 14px 0px #00000024;
+
+  background-color: ${({ theme }) => theme.colors.background.details};
+
+  ${media.tablet} {
+    width: 100%;
+    padding: 0px 5px;
+  }
+`;

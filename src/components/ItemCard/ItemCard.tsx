@@ -1,4 +1,5 @@
 import { IItem } from "../../types/types";
+import ModalComponent from "../ModalComponent/ModalComponent";
 import {
   ConteinerCard,
   Description,
@@ -8,9 +9,15 @@ import {
   ValueText,
 } from "./_itemCard";
 
-const ItemCard = ({ name, images, description, price }: IItem) => {
+interface ItemCardProps {
+  item: IItem;
+  onClick: () => void;
+}
+
+const ItemCard = ({ item, onClick }: ItemCardProps) => {
+  const { name, images, description, price } = item;
   return (
-    <ConteinerCard>
+    <ConteinerCard onClick={onClick}>
       <Description>
         <TitleText>{name}</TitleText>
         <DescriptionText>{description}</DescriptionText>

@@ -5,24 +5,24 @@ export const HeaderStoreItems = styled.article`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;  // Adicionado para alinhar verticalmente o ícone
+  align-items: center;
   padding: 10px;
   font-size: 2rem;
   font-weight: 500;
-  cursor: pointer;  // Adicionado para indicar que é clicável
+  cursor: pointer;
 `;
 
 export const StoreItems = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 5px;
-  overflow: hidden;  // Necessário para o efeito de deslizamento
-  max-height: 0;  // Inicialmente colapsado
-  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;  // Transição suave
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
 
   &.expanded {
-    max-height: 1000px;  // Define uma altura máxima que seja maior que o conteúdo esperado
-    padding: 5px 0;  // Adiciona padding durante a expansão
+    max-height: 1000px;
+    padding: 5px 0;
   }
 
   @media (max-width: 500px) {

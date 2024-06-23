@@ -9,6 +9,7 @@ import theme from "./styles/theme";
 import LoadingBarWrapper from "./components/LoadingBarWrapper/LoadingBarWrapper";
 import { RoutePages } from "./Router";
 import Header from "./components/Header/Header";
+import CartProvider from "./context/addCart";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -18,12 +19,14 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <BrowserRouter>
-        <LoadingBarWrapper>
-          <Header />
-          <RoutePages />
-        </LoadingBarWrapper>
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <LoadingBarWrapper>
+            <Header />
+            <RoutePages />
+          </LoadingBarWrapper>
+        </BrowserRouter>
+      </CartProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

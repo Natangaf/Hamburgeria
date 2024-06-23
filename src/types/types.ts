@@ -55,3 +55,7 @@ export interface IDatabase {
   collapse: number;
   sections: ISection[];
 }
+
+export interface IItemCart extends IItem {
+  quantity: number;
+}

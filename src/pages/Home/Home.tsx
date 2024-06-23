@@ -1,5 +1,6 @@
 import { PrincipalImage } from "../../assets/img";
 import {
+  BoxShadowCart,
   BoxShadowStoreItems,
   Cards,
   Containerimage,
@@ -14,8 +15,12 @@ import Search from "../../components/Search/Search";
 import { database } from "../../teste";
 import { ISection } from "../../types/types";
 import StoreItemsList from "../../components/StoreItems/StoreItems";
+import Cart from "../../components/Cart/Cart";
+import { useState } from "react";
+import ModalComponent from "../../components/ModalComponent/ModalComponent";
 
 const Home = () => {
+
   return (
     <>
       <FigurePrincipal data-com="FigurePrincipal">
@@ -41,8 +46,12 @@ const Home = () => {
               <StoreItemsList {...section} />
             ))}
           </BoxShadowStoreItems>
+          <BoxShadowCart>
+            <Cart />
+          </BoxShadowCart>
         </MainDashboard>
       </ContainerComponent>
+
     </>
   );
 };

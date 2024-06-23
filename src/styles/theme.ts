@@ -16,7 +16,7 @@ const theme = {
     text: {
       main: "#121212",
       secondary: "#464646",
-      write: "#FFFFFF",
+      white: "#FFFFFF",
     },
     success: {
       main: "#1C812A",

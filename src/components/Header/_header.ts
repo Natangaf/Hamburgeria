@@ -37,7 +37,7 @@ export const Headerbackgroud = styled.header`
 
   font-size: 1rem;
   font-weight: 600;
-  color: ${({ theme }) => theme.colors.text.write};
+  color: ${({ theme }) => theme.colors.text.white};
 `;
 
 export const ListItem = styled.ul`
@@ -72,7 +72,7 @@ export const SelectMenu = styled.span`
   left: 50%;
   transform: translate(-50%, -50%);
 
-  background-color: ${({ theme }) => theme.colors.text.write};
+  background-color: ${({ theme }) => theme.colors.text.white};
 `;
 
 export const MobileMenu = styled.div`
@@ -125,7 +125,7 @@ export const MenuList = styled.ul<{ stateMobileMenu: boolean }>`
 
   font-size: 1.5rem;
   font-weight: 600;
-  color: ${({ theme }) => theme.colors.text.write};
+  color: ${({ theme }) => theme.colors.text.white};
 
   list-style: none;
 
