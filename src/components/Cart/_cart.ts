@@ -35,7 +35,6 @@ export const StoreItemsCart = styled.ul`
   }
 `;
 
-
 export const NoneItemCart = styled.li`
   padding: 24px;
   font-size: 1rem;
@@ -49,19 +48,24 @@ export const ItemCart = styled.li`
 
   padding: 10px;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-`;
-
-export const Description = styled.div`
-  width: 65%;
-
-  padding: 10px;
-  display: flex;
   gap: 5px;
   flex-direction: column;
   align-items: flex-start;
+`;
+
+export const Description = styled.div`
+  font-size: 16px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.text.secondary};
+`;
+
+export const HeaderIten = styled.div`
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const TitleText = styled.h3`
@@ -99,4 +103,45 @@ export const FigureCard = styled.img`
   object-fit: cover;
 
   border-radius: 5px;
+`;
+
+export const ContainerQuantity = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+`;
+
+export const ButtonQuantity = styled.button`
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 800;
+  font-size: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  color: ${({ theme }) => theme.colors.background.secondary};
+  background-color: ${({ theme }) => theme.colors.primary.main};
+`;
+export const FooterCart = styled.div`
+  width: 100%;
+
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+export const Resume = styled.h3`
+  font-size: 24px;
+  font-weight: 300;
 `;

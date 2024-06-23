@@ -58,4 +58,11 @@ export interface IDatabase {
 
 export interface IItemCart extends IItem {
   quantity: number;
+  selectedModifiers: selectedModifiers[];
 }
+
+export interface selectedModifiers {
+  modifierId: number;
+  items: IModifierItem[];
+}
+[];

@@ -97,8 +97,15 @@ const ModalIten = ({ item, onClose }: ModalItenProps) => {
   };
 
   const handleAddToCart = () => {
-    addItenCart(item.id, quantity);
-    console.log("Item added to cart:", item);
+    const selectedModifiersArray = Array.from(selectedModifiers.entries()).map(
+      ([modifierId, items]) => ({
+        modifierId,
+        items,
+      })
+    );
+
+    addItenCart(item.id, quantity, selectedModifiersArray);
+    console.log("Item added to cart:", item, quantity, selectedModifiersArray);
     onClose();
   };
 
