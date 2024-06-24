@@ -8,6 +8,7 @@ import React, {
 import { StoreInfoService } from "../services/StoreInfoService";
 import { IDatabase } from "../types/MenuInfoTypes";
 import { StoreMenuService } from "../services/StoreMenuService";
+import { Restaurant } from "../types/StoreInfoTypes";
 
 interface ChildrenProps {
   children: ReactNode;

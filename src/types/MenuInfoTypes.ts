@@ -43,7 +43,7 @@ export interface ISection {
   name: string;
   description?: string | null;
   position: number;
-  visible: number;
+  visible?: number;
   images: IImage[];
   items: IItem[];
 }
