@@ -12,24 +12,30 @@ import {
 } from "./_home";
 import ContainerComponent from "./../../components/ContainerComponent/ContainerComponent";
 import Search from "../../components/Search/Search";
-import { database } from "../../teste";
-import { ISection } from "../../types/types";
+
 import StoreItemsList from "../../components/StoreItems/StoreItems";
 import Cart from "../../components/Cart/Cart";
-
+import { useStoreInfo } from "../../context/StoreInfo";
+import { ISection } from "../../types/MenuInfoTypes";
 
 const Home = () => {
+  const { storeInfo, storeMenu } = useStoreInfo();
+
   return (
     <>
       <FigurePrincipal data-com="FigurePrincipal">
-        <PrincipalImg data-com="PrincipalImg" src={PrincipalImage} alt="" />
+        <PrincipalImg
+          data-com="PrincipalImg"
+          src={storeInfo.webSettings.bannerImage}
+          alt=""
+        />
       </FigurePrincipal>
       <ContainerComponent gap={0}>
         <Search />
         <MainDashboard data-com="MainDashboard">
           <BoxShadowStoreItems>
             <NavCards>
-              {database.sections.map(({ id, images, name }: ISection) => {
+              {storeMenu.sections.map(({ id, images, name }) => {
                 return (
                   <Cards key={id}>
                     <Containerimage>
@@ -40,7 +46,7 @@ const Home = () => {
                 );
               })}
             </NavCards>
-            {database.sections.map((section) => (
+            {storeMenu.sections.map((section) => (
               <StoreItemsList {...section} key={section.id} />
             ))}
           </BoxShadowStoreItems>

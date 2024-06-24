@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-import { IItemCart, selectedModifiers } from "../types/types";
-import { database } from "../teste";
+import { IItemCart, selectedModifiers } from "../types/MenuInfoTypes";
+import { useStoreInfo } from "./StoreInfo";
+
 
 interface ChildrenProps {
   children: ReactNode;
@@ -21,7 +22,11 @@ interface IuseCartProvider {
 const CartContext = createContext<IuseCartProvider>({} as IuseCartProvider);
 
 const CartProvider = ({ children }: ChildrenProps) => {
+  const {storeMenu}= useStoreInfo()
+
   const [cart, setCart] = useState<IItemCart[]>([]);
+
+
 
   const deleteItenCart = (id: number) => {
     const updatedCart = cart
@@ -54,7 +59,7 @@ const CartProvider = ({ children }: ChildrenProps) => {
       );
       setCart(updatedCart);
     } else {
-      const item = database.sections
+      const item = storeMenu.sections
         .flatMap((section) => section.items)
         .find((item) => item.id === id);
 
