@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { IItem, IModifier, IModifierItem } from "../../types/types";
 import {
   ContainerModal,
   Close,
@@ -20,6 +19,7 @@ import {
 } from "./_modalIten";
 import { close } from "../../assets/icons";
 import { useCart } from "../../context/addCart";
+import { IItem, IModifier, IModifierItem } from "../../types/MenuInfoTypes";
 
 interface ModalItenProps {
   item: IItem | null;
@@ -105,7 +105,6 @@ const ModalIten = ({ item, onClose }: ModalItenProps) => {
     );
 
     addItenCart(item.id, quantity, selectedModifiersArray);
-    console.log("Item added to cart:", item, quantity, selectedModifiersArray);
     onClose();
   };
 
